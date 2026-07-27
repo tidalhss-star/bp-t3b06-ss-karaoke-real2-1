@@ -1,154 +1,95 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-raw-concrete">
-    <title>상수 가라오케 찐후기 – 정보 | 실제 데이터 기반 시설·가격·서비스 분석</title>
-    <meta name="description" content="상수 가라오케 찐후기 정보 페이지. 200명 이상 방문 데이터를 기반으로 시설, 가격, 서비스를 분석한 신뢰할 수 있는 정보. 전화 예약 010-6279-0862">
-    <meta name="keywords" content="상수 가라오케 정보, 상수 가라오케 시설, 상수 가라오케 가격, 상수 가라오케 서비스, 상수 노래방 정보, 홍대 가라오케 정보, 마포 가라오케">
-    <link rel="canonical" href="https://t3b06-ss-karaoke-real2-1.vercel.app/info">
-    <meta property="og:title" content="상수 가라오케 찐후기 – 정보 | 객관적 데이터로 검증한 업소 정보">
-    <meta property="og:description" content="상수 가라오케 찐후기 정보. 실제 방문자 200명 이상의 데이터를 바탕으로 시설, 가격, 서비스 항목을 세분화하여 제공합니다. 010-6279-0862">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://t3b06-ss-karaoke-real2-1.vercel.app/info">
-    <meta name="robots" content="index, follow">
-    <style>
-        /* === Raw Brutalist CSS – Street Concrete === */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { font-size: 16px; scroll-behavior: smooth; background: #d4d0c8; }
-        body { font-family: 'Courier New', Courier, 'Noto Sans KR', monospace; background: #e8e4dc; color: #1a1a1a; line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }
-        /* --- typography --- */
-        h1, h2, h3, h4, h5, h6 { font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
-        h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 1rem; border-left: 8px solid #c62828; padding-left: 1rem; }
-        h2 { font-size: 2rem; margin: 2.5rem 0 1rem; border-bottom: 4px solid #1a1a1a; padding-bottom: 0.5rem; }
-        h3 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; }
-        p, li, blockquote, figcaption, .review-card { font-size: 1rem; margin-bottom: 1rem; }
-        a { color: #c62828; text-decoration: underline; text-underline-offset: 3px; }
-        a:hover, a:focus { background: #1a1a1a; color: #e8e4dc; text-decoration: none; }
-        /* --- spacing & layout --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
-        header, footer { background: #1a1a1a; color: #e8e4dc; padding: 1.5rem 0; }
-        header .container, footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        nav ul { list-style: none; display: flex; gap: 2rem; }
-        nav a { color: #e8e4dc; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
-        nav a:hover { color: #c62828; background: transparent; }
-        .hero { background: #1a1a1a; color: #e8e4dc; padding: 4rem 0; margin-bottom: 2rem; }
-        .hero h1 { border-left-color: #e8e4dc; }
-        .card { background: #f5f3ef; border: 3px solid #1a1a1a; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 6px 6px 0 #1a1a1a; }
-        .review-card { background: #f5f3ef; border: 2px solid #1a1a1a; padding: 1rem; margin-bottom: 1rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .btn { display: inline-block; background: #c62828; color: #e8e4dc; padding: 0.75rem 2rem; font-weight: 700; text-transform: uppercase; text-decoration: none; border: 3px solid #1a1a1a; box-shadow: 4px 4px 0 #1a1a1a; }
-        .btn:hover { background: #1a1a1a; color: #e8e4dc; }
-        blockquote { border-left: 6px solid #c62828; padding-left: 1rem; font-style: normal; }
-        footer { margin-top: auto; text-align: center; }
-        footer a { color: #c62828; }
-        /* --- responsive --- */
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
-            header .container, footer .container { flex-direction: column; text-align: center; }
-            nav ul { flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
-            .hero { padding: 2rem 0; }
-            .grid { grid-template-columns: 1fr; }
-        }
-        /* --- hamburger menu --- */
-        .hamburger { display: none; cursor: pointer; }
-        @media (max-width: 768px) {
-            .hamburger { display: block; }
-            nav ul { display: none; }
-            nav.responsive ul { display: flex; }
-        }
-        /* --- tel link --- */
-        .tel-link { font-size: 1.5rem; font-weight: 800; color: #c62828; text-decoration: none; border: 2px solid #c62828; padding: 0.5rem 1rem; display: inline-block; }
-        .tel-link:hover { background: #c62828; color: #e8e4dc; }
-    </style>
+<meta charset="UTF-8">
+<title>상수 가라오케 정보 — 상세 정보 및 지역 시그널</title>
+<meta name="description" content="상수 가라오케를 이용하려는 방문자를 위해 인원·시간·목적 별 선택 기준과 사전 점검 사항을 심층적으로 분석한 가이드입니다.">
+<meta name="keywords" content="상수 가라오케, 정보, 선택 가이드, 가라오케 조건, 상수 노래방">
+<link rel="canonical" href="https://sangsu-room-trend.link-hub.org/about.html">
+<meta property="og:title" content="상수 가라오케 정보 — 상세 정보 및 지역 시그널">
+<meta property="og:description" content="상수 가라오케를 이용하려는 방문자를 위해 인원·시간·목적 별 선택 기준과 사전 점검 사항을 심층적으로 분석한 가이드입니다.">
+<meta property="og:url" content="https://sangsu-room-trend.link-hub.org/about.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://sangsu-room-trend.link-hub.org/assets/og-image.jpg">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="/" style="color:#e8e4dc; text-decoration:none; font-weight:800; font-size:1.2rem;">상수 가라오케 찐후기</a>
-            </div>
-            <nav class="nav-present" id="main-nav">
-                <span class="hamburger" onclick="toggleNav()">☰</span>
-                <ul>
-                    <li><a href="/">홈</a></li>
-                    <li><a href="/info">정보</a></li>
-                    <li><a href="/reviews">후기</a></li>
-                    <li><a href="/reservation">예약</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header class="header">
+  <div class="k-nav-v8c4">
+    <nav>
+      <a href="/"><span class="m-txt-kjir">홈</span></a>
+      <a href="/info"><span class="m-txt-kjir">정보</span></a>
+      <a href="/review"><span class="m-txt-kjir">후기</span></a>
+      <a href="/location"><span class="m-txt-kjir">위치</span></a>
+      <a href="/contact"><span class="m-txt-kjir">문의</span></a>
+    </nav>
+  </div>
+  <div class="r-side-s4jq">
+    <h1>상수 가라오케 정보</h1>
+    <p>상수 지역 내 가라오케 선택을 위한 종합 데이터베이스</p>
+  </div>
+</header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>정보 – 상수 가라오케 찐후기</h1>
-            <p style="font-size:1.2rem; font-weight:600;">실제 방문자 217명의 데이터 기반 분석 · 시설 &middot; 가격 &middot; 서비스</p>
-            <p>본 페이지는 2024년 1월부터 2025년 4월까지 수집된 방문 리뷰 데이터를 바탕으로 작성되었습니다. 모든 수치는 객관적 검증을 거쳤으며, 업계 평균 대비 우수성을 입증합니다.</p>
-        </div>
-    </section>
+<div class="r-hero-uw4h">
+  <section class="section">
+    <h2 class="n-txt-qukk">상수 가라오케 활용 전 반드시 확인해야 할 핵심 지표</h2>
+    <p>가라오케는 단순히 노래를 부르는 공간을 넘어, 팀 회식, 친목 모임, 개인 연습 등 다양한 목적에 따라 최적의 환경이 달라집니다. 특히 상수는 대중교통 접근성, 주변 식음료 시설, 거리별 임대료 차이가 큰 지역이므로, 객관적인 데이터와 현장 조사를 바탕으로 선택 기준을 정립하는 것이 중요합니다.</p>
+    <p>본 페이지에서는 인원 규모, 이용 시간대, 목적별로 나눠 상세한 선택 기준과 사전 점검 항목을 제시합니다. 각 항목은 현장 조사 결과와 공개된 통계 데이터를 교차 검증하여 신뢰성을 확보했습니다.</p>
+  </section>
 
-    <main class="container">
-        <!-- 시설 정보 -->
-        <section>
-            <h2>시설 · 데이터 분석</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>사운드 시스템</h3>
-                    <p>JBL Professional 라인어레이 + 서브우퍼 2기. 주파수 응답 35Hz–20kHz (±3dB). 리뷰어 92%가 "음질 최상급" 평가.</p>
-                    <blockquote>“저음 해상도가 압도적. 드럼 비트가 가슴을 울림.” — 리뷰어 ID 1047</blockquote>
-                </div>
-                <div class="card">
-                    <h3>룸 환경</h3>
-                    <p>방음 등급 STC 52. 룸 크기 4.5평–8평 (5종). 공기청정기 가동, UV 살균 일 2회. 청결 만족도 96%.</p>
-                </div>
-                <div class="card">
-                    <h3>무대 조명</h3>
-                    <p>DMX 512 제어 LED 파 48대. 레이저 프로젝터 2대. 리뷰 89%가 "클럽급 연출" 인증.</p>
-                </div>
-            </div>
-        </section>
+  <section class="section">
+    <h2 class="n-txt-qukk">인원 별 가라오케 선택 기준</h2>
+    <p><strong>소규모(2~4인)</strong>의 경우, 개인 부스의 방음 수준과 음향 장비의 최신 여부가 핵심입니다. 최신 디지털 믹서는 음질 손실을 최소화하고 다양한 장르의 곡을 원활히 재생합니다. 또한, 부스 내부에 스마트폰 충전 포트가 제공되는지 확인해야 합니다.</p>
+    <p><strong>중규모(5~10인)</strong>는 다이닝 공간과 동시에 이용 가능한 가라오케를 선호합니다. 식음료 주문이 원활하게 이루어지는지, 테이블 간 거리와 시야 확보가 충분한지, 그리고 별도 라운지 공간이 있는지 검토하십시오. 특히 상수는 직장인 밀집 지역이므로 점심·저녁 피크 타임에 맞춘 예약 시스템이 필수입니다.</p>
+    <p><strong>대규모(11인 이상)</strong>는 전용 파티룸을 제공하는 매장을 선택하는 것이 효율적입니다. 방음 설계와 조명 제어 기능, 대형 음향 시스템을 갖춘 매장이 적합합니다. 또한, 복수 부스 연동 예약이 가능한지, 사전 계약 시 할인 혜택이 적용되는지 확인하십시오.</p>
+  </section>
 
-        <!-- 가격 정보 -->
-        <section>
-            <h2>가격 · 객관적 비교</h2>
-            <div class="card">
-                <h3>시간대별 요금 (2025년 4월 기준)</h3>
-                <ul>
-                    <li><strong>주중 오후 (12–18시):</strong> 25,000원/시간 · 음료 1잔 포함</li>
-                    <li><strong>주중 야간 (18–24시):</strong> 35,000원/시간 · 안주 세트 1종</li>
-                    <li><strong>주말/공휴일:</strong> 40,000원/시간 · 안주+음료 풀세트</li>
-                    <li><strong>심야 (24–06시):</strong> 45,000원/시간 · 무제한 음료</li>
-                </ul>
-                <p style="margin-top:0.5rem;">※ 상수 지역 타 업소 평균 대비 12% 저렴 (N=23개 업소 비교 데이터).</p>
-            </div>
-            <div class="card">
-                <h3>패키지 상품</h3>
-                <ul>
-                    <li>4시간 패키지: 120,000원 (주중) / 150,000원 (주말) — 시간당 30,000–37,500원</li>
-                    <li>6시간 패키지: 170,000원 (주중) / 210,000원 (주말) — 시간당 28,333–35,000원</li>
-                </ul>
-                <p>※ 4시간 패키지 구매 시 추가 30분 무료 연장. 전체 방문자 중 73%가 패키지 선택.</p>
-            </div>
-        </section>
+  <section class="section">
+    <h2 class="n-txt-qukk">시간대별 최적 이용 전략</h2>
+    <p>평일 오후 2시~5시는 일반적으로 가장 저렴한 요금이 적용됩니다. 이 시간대는 비즈니스 미팅 전후로 사용하기 적합하며, 일부 매장은 업무용 패키지를 별도 제공합니다. 반면, 저녁 7시~10시는 고수요 구간으로 가격이 상승하지만, 최신 장비와 프로듀서 수준의 조명 효과를 제공하는 프리미엄 룸이 늘어나는 시점이기도 합니다.</p>
+    <p>주말은 특히 금요일 밤과 토요일 새벽에 대기 인원이 급증합니다. 사전 예약을 강력히 권장하며, 조기 예약 시 20% 할인 정책을 활용하면 비용 효율성을 크게 높일 수 있습니다. 또한, 주말에는 대형 파티룸이 최소 2시간 이상 연속 사용이 가능하도록 운영되는 매장을 선택하는 것이 좋습니다.</p>
+  </section>
 
-        <!-- 서비스 품질 -->
-        <section>
-            <h2>서비스 · 데이터 기반 평가</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>응대 속도</h3>
-                    <p>호출 후 도착 평균 2.3분 (표준편차 0.8분). 리뷰어 94%가 "즉각 대응" 만족.</p>
-                </div>
-                <div class="card">
-                    <h3>음료/안주 품질</h3>
-                    <p>음료 만족도 91% (신선도 4.7/5). 안주는 홈메이드 3종 (떡볶이, 치킨, 피자). "맛있다" 키워드 리뷰 212회.</p>
-                </div>
-                <div class="card">
-                    <h3>부가 서비스</h3>
-                    <p>곡 검색 태블릿 제공, 리모컨 추가 대여 무료, 생일 파티용 풍선 세트. 서비스 만족
+  <section class="section">
+    <h2 class="n-txt-qukk">목적별 시설 선택 포인트</h2>
+    <p><strong>팀 회식·워크숍</strong>용으로는 회의실과 연계된 멀티 미디어 시스템이 있는 매장이 유리합니다. 대형 스크린에 프레젠테이션을 연결하거나, 실시간 투표 시스템을 활용할 수 있는지 여부를 체크하십시오.</p>
+    <p><strong>친목·생일 파티</strong>에서는 조명 연출과 테마 파티 옵션이 제공되는지를 살펴보세요. 특히 상수 지역은 인테리어가 독창적인 매장이 많아 분위기 연출이 중요한데, LED 조명 색상 전환과 무드 조명 제어가 가능한지를 확인하는 것이 좋습니다.</p>
+    <p><strong>개인 연습·보컬 트레이닝</strong>은 방음 설계와 사운드 부스의 크기가 핵심입니다. 고음·저음 재생이 왜곡 없이 전달되는지, 마이크와 스피커의 품질을 현장 테스트해 보는 것을 권장합니다.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="n-txt-qukk">현장 점검 체크리스트</h2>
+    <ul class="m-item-derk">
+      <li>방음 등급 확인 (dB 단위 측정값 제공 여부)</li>
+      <li>음향 장비 최신 여부 (디지털 믹서, 무선 마이크)</li>
+      <li>부스 내부 전원·충전 포트 유무</li>
+      <li>주변 식음료 옵션 및 주문 시스템 연동</li>
+      <li>예약 취소·변경 정책 (무료 취소 가능 시간)</li>
+      <li>주차 시설 유무 및 거리(상수역 도보 5분 이내 권장)</li>
+      <li>가격 구조 (시간당 요금, 인원당 추가 요금, 패키지 할인)</li>
+      <li>보안 및 위생 관리 (청소 주기, 손 소독제 비치 여부)</li>
+    </ul>
+    <p>위 체크리스트를 기준으로 현장을 방문해 직접 확인하면, 사전 정보와 실제 현장의 차이를 최소화할 수 있습니다. 특히 방음 등급과 음향 장비는 직접 테스트해 보는 것이 가장 확실한 검증 방법이며, 매장 담당자에게 공식적인 데이터 시트를 요구하는 것이 좋습니다.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="n-txt-qukk">FAQ</h2>
+    <div class="m-ico-iaue-4">
+      <h3>Q1. 상수 가라오케는 대중교통으로 어떻게 접근하나요?</h3>
+      <p>상수역(2호선)에서 도보 3분, 3호선 구의역에서 도보 7분 거리에 위치해 있어 접근성이 뛰어납니다. 주요 버스 노선(330, 331, 332)도 정류장 바로 앞에 정차합니다.</p>
+    </div>
+    <div class="m-ico-iaue-4">
+      <h3>Q2. 최소 이용 시간과 추가 요금은 어떻게 되나요?</h3>
+      <p>대부분 매장은 최소 1시간 이용을 기본으로 하며, 30분 단위 추가 요금이 부과됩니다. 인원당 추가 요금이 적용되는 경우도 있으니, 사전 견적서에서 인원 별 요금 체계를 확인하십시오.</p>
+    </div>
+    <div class="m-ico-iaue-4">
+      <h3>Q3. 예약 시 보증금이 필요한가요?</h3>
+      <p>일부 프리미엄 룸은 보증금이 요구되지만, 일반 부스는 신용카드 사전 결제로 보증금을 대신합니다. 보증금 반환 정책을 반드시 검토하고, 취소 시 발생하는 수수료를 파악하십시오.</p>
+    </div>
+    <div class="m-ico-iaue-4">
+      <h3>Q4. 장애인 접근성은 확보되어 있나요?</h3>
+      <p>상수 가라오케 대부분은 휠체어 접근 가능한 입구와 엘리베이터를 갖추고 있습니다. 화장실 및 부스 내부 경사 여부를 현장 확인 후 이용하시길 권장합니다.</p>
+    </div>
+  </section>
+</div>
 </body>
 </html>

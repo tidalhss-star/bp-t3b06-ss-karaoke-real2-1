@@ -1,288 +1,85 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-raw-concrete">
-    <title>상수 가라오케 찐후기 – 진짜 방문자가 검증한 블로그</title>
-    <meta name="description" content="상수 가라오케 찐후기 전문 블로그. 시설, 가격, 서비스 항목별 객관적 데이터와 6개월간의 방문 통계를 바탕으로 한 정보성 글. 전화 예약 010-6279-0862">
-    <meta name="keywords" content="상수 가라오케 찐후기 블로그, 상수 가라오케 정보, 상수 가라오케 시설 분석, 상수 가라오케 가격 비교, 홍대 가라오케 찐후기, 마포 가라오케 리뷰">
-    <link rel="canonical" href="https://t3b06-ss-karaoke-real2-1.vercel.app/blog">
-    <meta property="og:title" content="상수 가라오케 찐후기 블로그 – 데이터로 검증한 선택 기준">
-    <meta property="og:description" content="상수 가라오케 찐후기 전문 블로그. 200명 이상의 실제 방문자 데이터를 기반으로 시설, 가격, 서비스를 분석한 정보성 글. 전화 예약 010-6279-0862">
-    <meta property="og:url" content="https://t3b06-ss-karaoke-real2-1.vercel.app/blog">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="ko_KR">
-    <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: #f5f0eb;
-            color: #1a1a1a;
-            font-family: 'Courier New', Courier, monospace;
-            line-height: 1.6;
-            padding: 0 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            border-bottom: 4px solid #000;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        h2 {
-            font-size: 1.8rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-left: 6px solid #000;
-            padding-left: 1rem;
-        }
-        h3 {
-            font-size: 1.3rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        p, li, blockquote, figcaption, .review-card {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        a {
-            color: #000;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            transition: background 0.2s, color 0.2s;
-        }
-        a:hover, a:focus {
-            background: #000;
-            color: #fff;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 1.5rem 0;
-            border: 3px solid #000;
-        }
-        ul, ol {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        li {
-            margin-bottom: 0.5rem;
-        }
-        blockquote {
-            border-left: 4px solid #000;
-            padding-left: 1rem;
-            font-style: italic;
-            background: #e8e2da;
-            padding: 0.75rem 1rem;
-            margin: 1.5rem 0;
-        }
-        hr {
-            border: none;
-            border-top: 3px solid #000;
-            margin: 2rem 0;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-            border-bottom: 3px solid #000;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        .tel-link {
-            background: #000;
-            color: #fff;
-            padding: 0.4rem 1rem;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 2px solid #000;
-        }
-        .tel-link:hover {
-            background: #fff;
-            color: #000;
-        }
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-        .hamburger-menu span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: #000;
-            border-radius: 1px;
-        }
-        @media (max-width: 768px) {
-            body {
-                padding: 0 1rem;
-            }
-            h1 {
-                font-size: 1.8rem;
-            }
-            h2 {
-                font-size: 1.4rem;
-            }
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            .hamburger-menu {
-                display: flex;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                gap: 0.5rem;
-                padding: 1rem 0;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .tel-link {
-                align-self: stretch;
-                text-align: center;
-            }
-        }
-        .container {
-            padding: 1rem 0;
-        }
-        .feature-box {
-            border: 3px solid #000;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            background: #e8e2da;
-        }
-        .review-card {
-            border: 2px solid #000;
-            padding: 1rem;
-            margin: 1rem 0;
-            background: #fff;
-        }
-        .review-card p {
-            margin-bottom: 0.5rem;
-        }
-        .faq-item {
-            border-bottom: 1px solid #000;
-            padding: 1rem 0;
-        }
-        .faq-item h3 {
-            margin: 0 0 0.5rem 0;
-        }
-        .faq-item p {
-            margin: 0;
-        }
-        footer {
-            border-top: 3px solid #000;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>상수 가라오케 블로그</title>
+  <meta name="description" content="상수 가라오케 이용자를 위한 심층 정보와 현장 체크포인트를 정리했습니다. 인원·시간·목적별로 맞춤형 선택 가이드를 제공합니다.">
+  <meta name="keywords" content="상수 가라오케, 가라오케 체크리스트, 상수 노래방 이용 팁, 가라오케 선택 가이드">
+  <link rel="canonical" href="https://sangsu-room-trend.link-hub.org/blog.html">
+  <meta name="bpaas-design-system" content="organic-stripe">
+  <meta name="bpaas-design-theme" content="kr-organic-stripe">
+  <meta property="og:title" content="상수 가라오케 블로그 — 현장 체크리스트와 활용 가이드">
+  <meta property="og:description" content="상수 가라오케를 효율적으로 활용하는 방법을 인원·시간·목적 별로 깊이 있게 다룹니다.">
+  <meta property="og:url" content="https://sangsu-room-trend.link-hub.org/blog.html">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="hamburger-menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-            <span></span><span></span><span></span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="/">홈</a></li>
-            <li><a href="/about">소개</a></li>
-            <li><a href="/reviews">찐후기</a></li>
-            <li><a href="/blog">블로그</a></li>
-            <li><a href="/contact">연락처</a></li>
-        </ul>
-        <a href="tel:01062790862" class="tel-link">010-6279-0862</a>
+  <header>
+    <nav class="nav-present">
+      <ul class="n-item-2bza">
+        <li><a href="/index.html">홈</a></li>
+        <li><a href="/review.html">리뷰</a></li>
+        <li><a href="/guide.html">가이드</a></li>
+        <li><a href="/contact.html">문의</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main class="container">
-        <h1>상수 가라오케 찐후기 블로그</h1>
-        <p>본 블로그는 2024년 9월부터 2025년 3월까지 총 6개월간 수집된 <strong>상수 가라오케 찐후기</strong> 데이터를 바탕으로 작성된 정보성 글입니다. 200명 이상의 실제 방문자 피드백과 현장 조사 결과를 종합하여 객관적 기준을 제시합니다.</p>
+  <main>
+    <!-- 서론 -->
+    <section class="t-img-63ou">
+      <h1>상수 가라오케, 이제는 선택이 아닌 전략이다</h1>
+      <p>가라오케는 단순히 노래를 부르는 공간이 아니다. 인원 구성을 어떻게 하느냐, 시간대를 어떻게 잡느냐, 그리고 목적이 무엇이냐에 따라 전혀 다른 결과가 나온다. 이 글은 그런 변수들을 직관적으로 파악하고, 현장에서 바로 적용할 수 있는 체크포인트를 제시한다.</p>
+      <p>우리는 “Swiss Minimal”이라는 디자인 철학을 차용해, 복잡함을 최소화하고 핵심 정보를 명확히 전달한다. 과감한 어조와 직설적인 표현으로, 기존 가라오케 선택 가이드가 지나치게 온건했던 틀을 깨고자 한다.</p>
+    </section>
 
-        <article>
-            <h2>시설 및 음향 품질 분석</h2>
-            <p>상수 가라오케의 시설은 방문자들이 가장 높은 점수를 준 항목입니다. 6개월간 수집된 213건의 리뷰 중 시설 관련 만족도는 87.3%로 나타났습니다. 특히 마이크 음질과 스피커 출력은 전문 음향 장비 수준으로 평가되며, 방음 성능 또한 인접 룸 간 소음 전달이 거의 없는 것으로 확인되었습니다.</p>
-            <div class="feature-box">
-                <h3>핵심 시설 데이터</h3>
-                <ul>
-                    <li>전체 룸 수: 22개 (소형 8, 중형 10, 대형 4)</li>
-                    <li>평균 룸 면적: 18.5㎡ (소형 기준 12㎡)</li>
-                    <li>음향 시스템: JBL Professional 시리즈 (전 룸 동일)</li>
-                    <li>방음 등급: KS F 4902 기준 1등급</li>
-                </ul>
-            </div>
-            <p>방문자 A씨(32세, 남성)는 “마이크 울림 없고 고음에서도 깨지지 않는다”고 평가했으며, 방문자 B씨(28세, 여성)는 “룸마다 음질 차이가 거의 없어서 어떤 방을 배정받아도 안심”이라고 응답했습니다. 이는 전체 리뷰의 91.2%가 음향에 대해 긍정적 평가를 내린 결과와 일치합니다.</p>
+    <!-- 인원별 활용 팁 -->
+    <section class="x-side-ikia">
+      <h2>인원별 최적 활용법</h2>
+      <p>소규모(2~4인) 파티에서는 방 하나를 전적으로 독점하는 것이 효율적이다. 개인 라인업을 미리 정하고, 방음 장비가 갖춰진 작은 룸을 선택하면 대화와 노래를 동시에 즐길 수 있다.</p>
+      <p>대규모(10인 이상) 모임이라면 여러 개의 방을 연계해 사용하는 것이 핵심이다. 사전 예약 시 방 크기와 음향 설비를 확인하고, 각 방마다 담당자를 지정해 흐름을 관리한다. 이렇게 하면 서로의 무대를 방해하지 않으며, 전체적인 분위기를 유지할 수 있다.</p>
+      <p>중간 규모(5~9인)에서는 ‘프리미엄 라운지’ 옵션을 검토한다. 라운지는 좌석과 소파가 혼합된 레이아웃을 제공해, 노래뿐 아니라 대화와 휴식이 자연스럽게 이어진다. 또한, 라운지 전용 스피커와 조명이 분위기를 한층 끌어올린다.</p>
+    </section>
 
-            <h2>가격 대비 서비스 만족도</h2>
-            <p>상수 가라오케의 기본 요금은 시간대와 룸 크기에 따라 35,000원 ~ 75,000원 (1시간 기준)으로 책정되어 있습니다. 6개월간의 가격 만족도 조사에서 응답자의 79.5%가 ‘적정하다’ 또는 ‘매우 적정하다’고 답했습니다.</p>
-            <table style="width:100%; border-collapse: collapse; margin:1.5rem 0;">
-                <thead>
-                    <tr style="border-bottom: 3px solid #000;">
-                        <th style="text-align:left; padding:0.5rem;">룸 타입</th>
-                        <th style="text-align:left; padding:0.5rem;">주중 요금</th>
-                        <th style="text-align:left; padding:0.5rem;">주말 요금</th>
-                        <th style="text-align:left; padding:0.5rem;">최대 인원</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid #000;">
-                        <td style="padding:0.5rem;">소형</td>
-                        <td style="padding:0.5rem;">35,000원</td>
-                        <td style="padding:0.5rem;">45,000원</td>
-                        <td style="padding:0.5rem;">4명</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #000;">
-                        <td style="padding:0.5rem;">중형</td>
-                        <td style="padding:0.5rem;">55,000원</td>
-                        <td style="padding:0.5rem;">65,000원</td>
-                        <td style="padding:0.5rem;">8명</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:0.5rem;">대형</td>
-                        <td style="padding:0.5rem;">65,000원</td>
-                        <td style="padding:0.5rem;">75,000원</td>
-                        <td style="padding:0.5rem;">12명</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>서비스 항목에서는 음료 제공 속도와 객실 청결도가 특히 높은 평가를 받았습니다. 방문자 10명 중 9명이 “직원 응대가 친절하고 신속하다”고 응답했으며, 룸 청소 상태에 대해 부정적 평가는 단 3건(1.4%)에 불과했습니다.</p>
+    <!-- 시간대별 체크포인트 -->
+    <section class="x-side-ikia">
+      <h2>시간대에 따라 달라지는 체크포인트</h2>
+      <p>주중 낮 시간대는 비교적 한산하므로, 시간당 할인을 제공하는 프로모션을 활용한다. 이때는 사전 예약 없이도 입장이 자유롭고, 추가 음료 할인까지 받을 수 있다.</p>
+      <p>주말 저녁은 가장 붐비는 시간대다. 이때는 사전 예약이 필수이며, 인원당 최소 30분 이상을 확보하는 것이 좋다. 또한, 사전 예약 시 방 선택 옵션을 미리 지정하면 대기 시간을 크게 줄일 수 있다.</p>
+      <p>새벽 시간(00:00~04:00)은 비용 효율이 최고인 구간이다. 하지만 소음 제한이 있을 수 있으니, 방음 설비가 잘 갖춰진 실내를 선택하고, 마이크 볼륨을 적절히 조절하는 것이 필요하다.</p>
+    </section>
 
-            <h2>방문자
+    <!-- 목적별 선택 가이드 -->
+    <section class="x-side-ikia">
+      <h2>목적에 맞는 방 선택 가이드</h2>
+      <p>‘프라이빗 파티’를 목표로 한다면, 전용 라운지나 VIP룸을 고려한다. 이러한 방은 외부 소음 차단이 뛰어나며, 조명과 사운드 시스템을 개별적으로 조절할 수 있다.</p>
+      <p>‘기업 워크숍’이나 ‘팀 빌딩’ 목적이라면, 프로젝터와 스크린이 설치된 회의형 방이 유리하다. 방 안에 마이크와 스피커가 별도로 마련돼 있어, 발표와 노래를 자연스럽게 전환할 수 있다.</p>
+      <p>‘친구와 즉흥적인 즐김’이 목적이라면, 일반 룸을 선택하고 최소 인원으로 예약한다. 방을 여러 개 나란히 배치해 자유롭게 이동하며, 다양한 장르의 곡을 골라 부를 수 있다.</p>
+    </section>
+
+    <!-- 현장 체크리스트 -->
+    <section class="t-img-63ou">
+      <h2>현장에서 반드시 확인해야 할 체크리스트</h2>
+      <p>① 음향 설비: 마이크와 스피커의 작동 여부를 입장 전 테스트한다. 음량 조절 스위치가 손쉬운 위치에 있는지 확인한다.</p>
+      <p>② 조명 옵션: 무대 조명과 분위기 조절이 가능한지, 색상 전환이 원활히 이루어지는지 살펴본다.</p>
+      <p>③ 방 규모와 인원 배치: 좌석 배치도와 실제 방 크기를 비교해, 인원수에 맞는 공간인지 판단한다.</p>
+      <p>④ 부대 서비스: 음료, 스낵, 포장 주문이 가능한지, 그리고 청소 서비스가 포함되는지 체크한다.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="t-img-63ou">
+      <h2>자주 묻는 질문(FAQ)</h2>
+      <h3>예약 없이 바로 입장할 수 있나요?</h3>
+      <p>일반적인 평일 낮 시간대는 예약 없이도 입장이 가능하지만, 방이 한정되어 있어 대기 시간이 발생할 수 있다. 고정된 인원이나 특정 시간대를 원한다면 사전 예약을 권장한다.</p>
+      <h3>음악 파일 포맷 제한이 있나요?</h3>
+      <p>대부분의 가라오케 시스템은 MP3와 WAV 파일을 지원한다. 최신 시스템은 FLAC와 AAC도 무리 없이 재생 가능하니, 파일 포맷을 미리 확인하고 업로드한다.</p>
+      <h3>다른 파티와 방을 공유할 수 있나요?</h3>
+      <p>공유형 방은 존재하지만, 방음이 완벽하지 않을 수 있다. 프라이버시가 중요한 경우 전용 방을 선택하는 것이 안전하다.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 상수 가라오케 정보센터. 모든 권리 보유.</p>
+  </footer>
 </body>
 </html>
